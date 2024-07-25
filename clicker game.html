@@ -1,0 +1,69 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Modern Clicker Game</title>
+      <style>
+          body {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              height: 100vh;
+              background-color: #282c34;
+              color: white;
+              font-family: 'Arial', sans-serif;
+          }
+          #score {
+              font-size: 3em;
+              margin-bottom: 20px;
+              text-align: center;
+          }
+          #clickButton, #resetButton {
+              padding: 15px 30px;
+              font-size: 1.5em;
+              margin: 10px;
+              border: none;
+              border-radius: 5px;
+              cursor: pointer;
+              transition: background-color 0.3s;
+          }
+          #clickButton {
+              background-color: #61dafb;
+              color: black;
+          }
+          #clickButton:hover {
+              background-color: #21a1f1;
+          }
+          #resetButton {
+              background-color: #ff4757;
+              color: white;
+          }
+          #resetButton:hover {
+              background-color: #e84118;
+          }
+      </style>
+  </head>
+  <body>
+      <div id="score">Score: 0</div>
+      <button id="clickButton">Click Me!</button>
+      <button id="resetButton">Reset</button>
+      <script>
+          let score = 0;
+          const scoreDisplay = document.getElementById('score');
+          const clickButton = document.getElementById('clickButton');
+          const resetButton = document.getElementById('resetButton');
+
+          clickButton.addEventListener('click', () => {
+              score++;
+              scoreDisplay.textContent = `Score: ${score}`;
+          });
+
+          resetButton.addEventListener('click', () => {
+              score = 0;
+              scoreDisplay.textContent = `Score: ${score}`;
+          });
+      </script>
+  </body>
+  </html>
